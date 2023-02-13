@@ -18,7 +18,7 @@ for test_case in range(1, T+1):
                     r += 1
                 elif r-a > 0:
                     r -= 1
-                elif r == 0:
+                elif r-a == 0:
                     r = a
                 k -= 1
                 if k == 0:
