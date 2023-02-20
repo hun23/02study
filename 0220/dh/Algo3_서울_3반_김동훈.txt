@@ -1,0 +1,24 @@
+1.
+    def check(문자열):
+        for c in 문자열:  # 주어진 문자열 내에서
+            if c == "(":  # 여는 괄호가 들어오면
+                stack.push  # 스택에 push 한다
+            elif c == ")":  # 닫는 괄호가 들어올 때
+                if len(stack) != 0:  # 스택이 비어있지 않으면
+                    stack.pop  # 스택에서 여는 괄호를 꺼낸다
+                else:  # 스택이 비어있으면 괄호 짝이 맞지 않으므로
+                    return False  # False 를 반환한다.
+        # 문자열 순회가 끝난 뒤 stack 내 원소가 남아있으면
+        # 여는 괄호가 더 많아 괄호 짝이 맞지 않으므로
+        if len(stack) != 0:
+            return False  # False 반환
+        return True  # 그 외 True 반환
+
+2.
+    [(]  # 여는 괄호를 만나 push
+    [(, (]  # 여는 괄호를 만나 push
+    [(]  # 닫는 괄호를 만나 pop
+    [(, (]  # 여는 괄호를 만나 push
+    [(]  # 닫는 괄호를 만나 pop
+    []  # 닫는 괄호를 만나 pop
+    [] # 스택이 빈 상태에서 닫는 괄호를 만나 pop from empty stack error
