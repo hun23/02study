@@ -14,7 +14,6 @@ cnt = 0
 # 2-1
 # 1) sol을 전체 for문으로 돌린다.
 # 2) sol[s]와 같은 값을 arr에서 찾고, 그 인덱스를 row, column, dia에 더한다.
-
 # 3) row, column, dia에 5가 생긴다면, cnt +1을 하고 0으로 갱신한다. => cnt가 3이상이 되면 break
 for s in range(25):
     if cnt >= 3:  # cnt가 3이상, break

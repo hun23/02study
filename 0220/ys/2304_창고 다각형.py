@@ -29,7 +29,6 @@ for _ in range(n):
     col[l] = h
 col1 = sorted(col.items())  # 정렬된 기둥 위치와 높이
 
-
 # 1-2. 필요한 값들 변수 지정
 left = col1[0][0]
 right = col1[-1][0]
