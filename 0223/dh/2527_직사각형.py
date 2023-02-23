@@ -11,14 +11,12 @@ def get_code(xlen, axlen, bxlen):
         return 0
 
 
-for i in range(4):
-    inp = list(map(int, input().split()))
-    ax1, ay1, ax2, ay2 = inp[:4]
-
 for _ in range(4):
-    inp = list(map(int, input().split()))
+    inp = list(map(int, input().split()))  # 입력
     ax1, ay1, ax2, ay2 = inp[:4]
     bx1, by1, bx2, by2 = inp[4:]
+
+    # 각 변의 길이
     axlen = ax2 - ax1
     aylen = ay2 - ay1
     bxlen = bx2 - bx1
