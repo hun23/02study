@@ -10,28 +10,6 @@
 - 문자열 탐색이 종료되었을 때, 스택이 비어있지 않는 경우 (열린 괄호가 닫는 괄호보다 많은 상황)
 - 닫는 괄호를 만나 스택에서 pop 하려고 하였으나, 스택이 비어있는 경우 (닫는 괄호가 열린 괄호보다 많은 상황)
 
-```
-strs = 'if ( ( i== 0 ) && ( j == 0)))'
-stack = [] # 괄호 검사를 위한 빈 스택 공간 생성
-
-for token in strs:
-    print(stack)
-    if token.isdecimal():
-        continue
-    if token == '(' or token == '[' or token == '{':
-        stack.append(token)
-    elif token == ')' or token == ']' or token == '}':
-        if not stack: # 스택이 비어있다면
-            print('Error') # 에러 출력
-            break # 종료
-        stack.pop() # 스택이 비어있지 않은 경우에만 pop
-else:
-    if stack != []: # 탐색이 종료되었음에도 스택이 비어있지 않다면
-        print('Error')
-    else:
-        print('Correct') #for문이 중단 없이 완료되면 괄호는 정상
-```
-
 (2) ( ( ) ( ) ) )
 [ ( ] # 여는 괄호를 만나 push
 [ (, ( ] # 여는 괄호를 만나 push
