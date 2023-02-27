@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('input.txt', 'r')
+# import sys
+# sys.stdin = open('input.txt', 'r')
 
 size = int(input())
 lst = [list(map(int, input().split())) for _ in range(6)]
