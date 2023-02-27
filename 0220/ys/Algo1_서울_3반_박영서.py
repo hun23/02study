@@ -35,7 +35,7 @@ for tc in range(1, T + 1):
 
     else:
         rlt.sort()
-        result = rlt[-1]- rlt[-2]
+        result = rlt[-1] - rlt[-2]
         print(f'#{tc} {result}')
 
 
