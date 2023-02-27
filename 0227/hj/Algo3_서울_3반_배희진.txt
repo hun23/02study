@@ -1,0 +1,33 @@
+(1)
+# 중위 순회
+# V 정점, E 간선 개수, edge 이진 트리의 노드 연결 상태
+
+def inorder(v): # 중위 순회이므로 좌측 노드 -> 부모 -> 우측 노드 순서대로 방문
+    if n > 0:
+        inorder(v.left[v])
+        print(v, end = ' ')
+        inorder(v.right[v])
+
+v.left = [0]*(V+1) # 왼쪽 자식 리스트
+v.right = [0]*(V+1) # 오른쪽 자식 리스트
+parent = [0]*(V+1) # 부모 리스트
+root = 0 # 초기 root 값 선언
+
+for i in range(E):
+    p, c = edge[i*2], edge[i*2+1] # 부모(p)와 자식(c) 노드 값을 저장
+    if v.left[p] == 0: # 왼쪽 자식이 없다면
+        v.left[p] = c # 부모의 index 기준으로 왼쪽 자식을 선언
+    else:
+        v.right[p] = c # 부모의 index 기준으로 오른쪽 자식 선언
+    parent[c] = p # 자식의 index 기준으로 부모 노드 저장
+
+for i in range(1, V+1):
+    if not parent[i]: # parent가 없는 노드가 나타나면
+        root = i # 해당 노드를 root로 지정
+        break
+
+inorder(root)
+
+(2)
+중위순회 : B A D C E
+후위순회 : B D E C A
