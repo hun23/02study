@@ -14,7 +14,7 @@ def bfs():
                     arr[nr][nc] = arr[r][c]
                     time_passed[nr][nc] = time_passed[r][c] + 1
                     q.append((nr, nc))
-                    
+
 
 N, K = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def recursion(start_idx, idx, M, starts, comb):
     if idx == M:
         temp = []
@@ -11,6 +12,7 @@ def recursion(start_idx, idx, M, starts, comb):
         comb[idx] = i
         recursion(i + 1, idx + 1, M, starts, comb)
     return
+
 
 def bfs(N, comb):
     global answer

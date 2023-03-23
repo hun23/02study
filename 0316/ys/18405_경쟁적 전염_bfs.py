@@ -30,7 +30,8 @@ def bfs(queue):
 
 # 2. input
 n, k = map(int, input().split()) # 시험관 크기, 바이러스 번호
-lab = [[-1]*(n+2)] + [[-1] + list(map(int, input().split())) + [-1] for _ in range(n)] + [[-1]*(n+2)]
+lab = [[-1]*(n+2)] + [[-1] + list(map(int, input().split())) 
++ [-1] for _ in range(n)] + [[-1]*(n+2)]
 s, x, y = map(int, input().split()) # s초, (x, y)
 
 # 2-2
