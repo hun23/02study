@@ -1,4 +1,4 @@
-def calculate(operators):
+def calculate(is_bracket):
     global line
     
     # divide line to numbers & operators(ops)
@@ -8,7 +8,7 @@ def calculate(operators):
         if letter.isdigit():
             numbers.append(int(letter))
         else:
-            ops.append((operators[op_idx], letter))
+            ops.append((is_bracket[op_idx], letter))
             op_idx += 1
             
     # calculate untill one number remains
@@ -43,24 +43,27 @@ def calculate(operators):
         del ops[0]
     return numbers[0]
 
-def recursion(operators, op_len, idx):
+def recursion(is_bracket, op_len, idx):
     global answer
     if op_len <= idx:
         # calculate
-        c = calculate(operators)
+        c = calculate(is_bracket)
         if answer < c:
             answer = c
         return
 
-    operators[idx] = 1  # put bracket on idx'th operator
-    recursion(operators, op_len, idx + 2)  # jump to next-next
-    operators[idx] = 0  # reset
-    recursion(operators, op_len, idx + 1)  # jump to next
+    is_bracket[idx] = True  # put bracket on idx'th operator
+    recursion(is_bracket, op_len, idx + 2)  # jump to next-next operator
+    is_bracket[idx] = False  # reset
+    recursion(is_bracket, op_len, idx + 1)  # jump to next operator
     return
 
-N = int(input())
+# 1 <= N <= 19 
+# ===> 0 <= len(operators) <= 9
+# ===> number of cases < 2**9(=512)
+N = int(input())  # 1 ~ 19 -> 
 line = list(input())
-operators = [0] * (len(line)//2)
-answer = 0
-recursion(operators, len(operators), 0)
+is_bracket = [False] * (len(line)//2)
+answer = -2147483648  # !!!!!!!!!!
+recursion(is_bracket, len(is_bracket), 0)
 print(answer)
