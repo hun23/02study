@@ -57,7 +57,6 @@ def next_core(idx, arr):
                 wireLength += cnt
                 next_core(idx + 1, arr)  # 다음으로 넘어갈 수 있다면,
                 # 넘어갈 수 없다면 원래 상태로 만들기
-
                 coreCnt -= 1
                 wireLength -= cnt
             else:

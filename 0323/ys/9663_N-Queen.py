@@ -14,7 +14,7 @@ cnt = n_queen이 성립하는 경우 count
 row = 해당 인덱스의 열에서 퀸이 놓여지는 행의 인덱스 입력
 '''
 n = int(input())
-ans = 0
+cnt = 0
 row = [0] * n
 
 '''
